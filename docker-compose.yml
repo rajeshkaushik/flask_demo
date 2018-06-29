@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - '6379:6379'
+
+  web:
+    build: .
+    ports:
+      - '8000:8000'
+    # volumes:
+    #   - .:/appl/flask_demo
+    links:
+      - redis
