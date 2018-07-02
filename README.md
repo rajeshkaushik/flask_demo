@@ -2,6 +2,10 @@
 Sample flask project with docker and gunicorn
 
 
+# Environment variables
+
+    source env_vars.sh
+
 # Deploying with docker
 
 1. Application
