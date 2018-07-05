@@ -1,21 +1,32 @@
 # flask_demo
 Sample flask project with docker and gunicorn
 
-
 # Environment variables
-# Make sure you create env_vars.sh from env_vars.sh.template for respective environment
+These are the environement variables that are required for the app to function correctly. Add these to a `.env` file:
 
-    source env_vars.sh
+    DB_USER=<user>
+    DB_PASS=<password>
+    DB_HOST=mssqldev
+    DB_PORT=1433
+    DB_NAME=flask_demo
+
+    APP_HOST=0.0.0.0
+    APP_PORT=8000
+
+    MSSQL_SA_PASSWORD=<password>
 
 # Deploying with docker
-    docker network create mynet
 
-1. Application
+1. Create network
+
+        docker network create mynet
+
+2. Create and run application
 
         docker build -t flask_demo:1 .
-        docker run --net mynet --name flask_demo --env-file env_vars.sh -d -p 8000:8000 flask_demo:1
+        docker run --net mynet --name flask_demo --env-file .env -d -p 8000:8000 flask_demo:1
 
-2. MS SQL Server
+3. Create and run MS SQL Server
 
         docker build -t mssql -f Dockerfile-MSSQL .
-        docker run --net mynet --name mssqldev -d -p 1433:1433 mssql
+        docker run --net mynet --name mssqldev --env-file .env -d -p 1433:1433 mssql
