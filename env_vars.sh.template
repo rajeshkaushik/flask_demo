@@ -1,9 +1,11 @@
-export DB_USER=<username>
-export DB_PASS=<password>
-export DB_HOST=<db-ip>
-export DB_PORT=<db-port>
+DB_USER=<username>
+DB_PASS=<password>
+DB_HOST=mssqldev
+DB_PORT=1433
 
-export DB_NAME=flask_demo
+DB_NAME=flask_demo
 
-export APP_HOST=0.0.0.0
-export APP_PORT=8000
+APP_HOST=0.0.0.0
+APP_PORT=8000
+
+MSSQL_SA_PASSWORD=<password>
