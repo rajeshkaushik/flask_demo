@@ -14,9 +14,10 @@ RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 RUN /bin/bash -c "source ~/.bashrc"
 
 RUN mkdir -p /appl/flask_demo/logs
+RUN mkdir -p /var/log/gunicorn
 
 COPY . /appl/flask_demo/
-RUN /bin/bash -c "source /appl/flask_demo/env_vars.sh"
+#RUN /bin/bash -c "source /appl/flask_demo/env_vars.sh"
 
 WORKDIR /appl/flask_demo/project
 RUN pip3 install -r requirements.txt
