@@ -6,12 +6,16 @@ attrs==18.1.0
 backcall==0.1.0
 click==6.7
 decorator==4.3.0
+
+# Flask packages
 Flask==1.0.2
 flask-marshmallow==0.9.0
 Flask-Migrate==2.1.1
 Flask-RESTful==0.3.6
 Flask-SQLAlchemy==2.3.2
 Flask-Testing==0.7.1
+flask-restplus==0.11.0
+
 ipdb==0.11
 ipython==6.4.0
 ipython-genutils==0.2.0
@@ -30,7 +34,6 @@ pluggy==0.6.0
 prompt-toolkit==1.0.15
 ptyprocess==0.5.2
 py==1.5.3
-pyodbc==4.0.23
 Pygments==2.2.0
 pytest==3.6.0
 python-dateutil==2.7.3
@@ -42,6 +45,9 @@ SQLAlchemy==1.2.8
 traitlets==4.3.2
 wcwidth==0.1.7
 Werkzeug==0.14.1
+
+# MS SQL
+pyodbc==4.0.23
 
 # Production
 gunicorn==19.8.1
