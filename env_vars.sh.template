@@ -1,0 +1,11 @@
+DB_USER=<username>
+DB_PASS=<password>
+DB_HOST=mssqldev
+DB_PORT=1433
+
+DB_NAME=flask_demo
+
+APP_HOST=0.0.0.0
+APP_PORT=8000
+
+MSSQL_SA_PASSWORD=<password>
