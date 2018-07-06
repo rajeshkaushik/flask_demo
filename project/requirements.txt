@@ -51,3 +51,4 @@ pyodbc==4.0.23
 
 # Production
 gunicorn==19.8.1
+redis
