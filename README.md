@@ -30,3 +30,9 @@ These are the environement variables that are required for the app to function c
 
         docker build -t mssql -f Dockerfile-MSSQL .
         docker run --net mynet --name mssqldev --env-file .env -d -p 1433:1433 mssql
+
+    If the image runs, use the following commands to create the database:
+
+        docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P <password>
+        > create database flask_demo
+        > go
