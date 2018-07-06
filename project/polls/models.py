@@ -23,3 +23,20 @@ class Choice(db.Model):
     votes = db.Column(db.Integer, default=0)
     question_id = db.Column(db.Integer, db.ForeignKey('questions.id'))
 #    question = db.relationship('Question', back_populates='choices')
+
+class Users(db.Model):
+
+    __tablename__='users'
+
+    id=db.Column(db.Integer,primary_key=True)
+    name = db.Column(db.String(45))
+    address = db.Column(db.String(45))
+    contact_no = db.Column(db.Integer)
+    status=db.Column(db.Integer)
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+
+
