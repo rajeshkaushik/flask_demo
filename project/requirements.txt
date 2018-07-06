@@ -45,3 +45,4 @@ Werkzeug==0.14.1
 
 # Production
 gunicorn==19.8.1
+redis

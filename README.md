@@ -29,4 +29,4 @@ These are the environement variables that are required for the app to function c
 3. Create and run MS SQL Server
 
         docker build -t mssql -f Dockerfile-MSSQL .
-        docker run --net mynet --name mssqldev --env-file .env -d -p 1433:1433 mssql
+        docker run --net mynet --name mssql --env-file .env -d -p 1433:1433 mssql
