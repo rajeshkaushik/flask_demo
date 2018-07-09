@@ -1,5 +1,4 @@
 from app import db
-from sqlalchemy.ext.declarative import declarative_base
 
 
 class Question(db.Model):

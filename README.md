@@ -46,7 +46,6 @@ Running Flake 8:
 
 Run tests
 
-    export APP_SETTINGS=testing
     pytest
 
 Generating Code coverage
