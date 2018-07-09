@@ -13,12 +13,14 @@ class TestQuestionListApi(MyTestCase):
         db.session.commit()
 
     def test_valid_response(self):
-        resp = self.client.get('/questions')
+        resp = self.client.get('/polls/questions')
         self.assertEqual(200, resp.status_code)
         self.assertEqual(1, resp.json[0]['id'])
 
     def test_create_question(self):
-        resp = self.client.post('/questions', data=json.dumps({'question_text': 'Shall we use Flask-Restful?'}), content_type='application/json')
+        resp = self.client.post('/polls/questions', data=json.dumps({
+            'question_text': 'Shall we use Flask-Restful?'
+        }), content_type='application/json')
         self.assertEqual(201, resp.status_code)
 
 
@@ -32,7 +34,7 @@ class TestQuestionApi(MyTestCase):
         db.session.commit()
 
     def test_valid_response(self):
-        resp = self.client.get('/questions/1')
+        resp = self.client.get('/polls/questions/1')
         self.assertEqual(200, resp.status_code)
         self.assertEqual(1, resp.json['id'])
         self.assertEqual('This is test question', resp.json['question_text'])

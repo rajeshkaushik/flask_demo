@@ -1,9 +1,9 @@
 from flask_restplus import Resource
 from flask import request
 
+from polls import poll_ns
 from polls.models import User
 from polls.schemas import user_schema, users_schema, user_model
-from app import api
 
 
 class UsersApi(Resource):
@@ -15,7 +15,7 @@ class UsersApi(Resource):
         user_data = users_schema.dump(users)
         return (user_data)
 
-    @api.expect(user_model)
+    @poll_ns.expect(user_model)
     def post(self):
         """
         :return:

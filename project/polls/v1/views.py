@@ -1,10 +1,9 @@
 from flask_restplus import Resource
 from flask import request
 
+from polls import poll_ns
 from polls.models import Question
 from polls.schemas import question_schema, questions_schema, question_model
-
-from app import api
 
 
 class QuestionListApi(Resource):
@@ -13,9 +12,9 @@ class QuestionListApi(Resource):
         results = questions_schema.dump(questions)
         return results
 
-    @api.expect(question_model)
+    @poll_ns.expect(question_model)
     def post(self):
-        question = question_schema.load(api.payload).data
+        question = question_schema.load(request.get_json()).data
         question.save()
         return question_schema.dump(question), 201
 

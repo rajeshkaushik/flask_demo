@@ -16,10 +16,6 @@ db = SQLAlchemy()
 db.init_app(app)
 api = Api(app)
 
-from polls.v1.views import QuestionListApi, QuestionApi
-from polls.v1.restplus_views import UsersApi
+from polls import poll_ns
 
-api.add_resource(QuestionListApi, '/questions')
-api.add_resource(QuestionApi, '/questions/<int:id>')
-
-api.add_resource(UsersApi, '/users')
+api.add_namespace(poll_ns)

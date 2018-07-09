@@ -2,8 +2,10 @@ from flask_restplus import fields
 
 from marshmallow_sqlalchemy import ModelSchema
 
+from app import db
+from polls import poll_ns
 from polls.models import Question, Choice, User
-from app import db, api
+
 
 
 class QuestionSchema(ModelSchema):
@@ -33,14 +35,14 @@ user_schema = UserSchema()
 users_schema = UserSchema(many=True)
 
 
-question_model = api.model('Questions', {
+question_model = poll_ns.model('Questions', {
     'id': fields.Integer(readonly=True),
     'question_text': fields.String,
     'pub_date': fields.Date,
 })
 
 
-user_model = api.model('Users', {
+user_model = poll_ns.model('Users', {
     'name': fields.String("User name"),
     'contact_no':fields.Integer(123456),
     'status':fields.Integer(1)
