@@ -36,3 +36,20 @@ These are the environement variables that are required for the app to function c
         docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P <password>
         > create database flask_demo
         > go
+
+
+# Code quality
+
+Running Flake 8:
+
+    flake8
+
+Run tests
+
+    export APP_SETTINGS=testing
+    pytest
+
+Generating Code coverage
+
+    coverage run -m pytest
+    coverage report

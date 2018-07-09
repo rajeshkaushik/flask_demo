@@ -1,6 +1,6 @@
 import json
 from tests.conftest import MyTestCase
-from app import create_app, db
+from app import db
 from polls.models import Question
 
 class TestQuestionListApi(MyTestCase):
@@ -36,4 +36,3 @@ class TestQuestionApi(MyTestCase):
         self.assertEqual(200, resp.status_code)
         self.assertEqual(1, resp.json['id'])
         self.assertEqual('This is test question', resp.json['question_text'])
-

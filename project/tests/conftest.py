@@ -1,11 +1,12 @@
 from flask_testing import TestCase
-from app import create_app, db
+
+from app import app, db
+
 
 class MyTestCase(TestCase):
 
     def create_app(self):
-    
-        return create_app('testing')
+        return app
 
     def setUp(self):
 
